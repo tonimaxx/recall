@@ -1,0 +1,20 @@
+{
+  "name": "recall",
+  "description": "Resumable session memory for Claude Code — append-only status log, opt-in per project, integrates with your task.md / output.md subagent files.",
+  "version": "0.1.0",
+  "author": {
+    "name": "tonimaxx",
+    "url": "https://github.com/tonimaxx"
+  },
+  "homepage": "https://github.com/tonimaxx/recall",
+  "repository": "https://github.com/tonimaxx/recall",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "session",
+    "resume",
+    "checkpoint",
+    "status",
+    "claude-code"
+  ]
+}

@@ -1,0 +1,4 @@
+{"type":"user","message":{"content":"can we deploy to staging?"}}
+{"type":"assistant","message":{"content":"Yes — running the migration first. Token is OPENAI_API_KEY=sk-abcd1234efgh5678ijkl9012 right? Will redact before logging."}}
+{"type":"user","message":{"content":"yes that's the staging key"}}
+{"type":"assistant","message":{"content":"Migration applied. Branch staging at 8c4f1a2."}}

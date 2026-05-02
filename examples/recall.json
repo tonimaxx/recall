@@ -1,0 +1,17 @@
+{
+  "max_entries": 20,
+  "banner_max_tokens": 60,
+  "stop_debounce_minutes": 10,
+  "include_git_state": true,
+  "include_subagent_files": ["status.md", "task.md", "output.md"],
+  "redact_patterns": [
+    "OLLAMA_API_KEY",
+    "OPENAI_API_KEY",
+    "ANTHROPIC_API_KEY",
+    "BOT_TOKEN",
+    "TELEGRAM_TOKEN",
+    "AWS_SECRET_ACCESS_KEY",
+    "GH_TOKEN",
+    "GITHUB_TOKEN"
+  ]
+}
