@@ -1,0 +1,29 @@
+{
+  "name": "recall",
+  "owner": {
+    "name": "tonimaxx",
+    "email": "tonimaxx@gmail.com",
+    "url": "https://github.com/tonimaxx"
+  },
+  "plugins": [
+    {
+      "name": "recall",
+      "source": "./",
+      "description": "Resumable session memory for Claude Code — file-based, opt-in, zero LLM cost.",
+      "version": "0.1.0",
+      "author": {
+        "name": "tonimaxx",
+        "url": "https://github.com/tonimaxx"
+      },
+      "homepage": "https://github.com/tonimaxx/recall",
+      "license": "MIT",
+      "keywords": [
+        "memory",
+        "session",
+        "resume",
+        "checkpoint",
+        "status"
+      ]
+    }
+  ]
+}

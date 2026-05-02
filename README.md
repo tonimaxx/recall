@@ -19,9 +19,10 @@
 ▸ **Why** — keep continuity across sessions without paying token cost on every start, without an opaque SQLite memory, without a background worker, and without competing with your existing `task.md`/`output.md` subagent files.
 ▸ **How** — install once, opt in per project with `/recall:init`, work normally, type `/recall:resume` when you want to pick up where you left off.
 
-```bash
+```text
 # install (once)
-/plugin install github:tonimaxx/recall
+/plugin marketplace add tonimaxx/recall
+/plugin install recall@recall
 
 # enable in a project (once per project)
 cd ~/my-project
@@ -119,25 +120,19 @@ recall's pitch in one sentence: *"What if my own deliberately-written `status.md
 
 ## ◆ Install
 
-### Option A — direct from GitHub *(recommended)*
+### Option A — from this repo as a marketplace *(recommended)*
 
 ```text
-/plugin install github:tonimaxx/recall
+/plugin marketplace add tonimaxx/recall
+/plugin install recall@recall
 ```
 
-### Option B — local clone *(for development or air-gapped boxes)*
+The first command registers this repo as a Claude Code plugin marketplace; the second installs the `recall` plugin from it. Updates land via `/plugin marketplace update recall`.
+
+### Option B — `--plugin-dir` for one session *(testing without installing)*
 
 ```bash
 git clone https://github.com/tonimaxx/recall.git ~/code/recall
-```
-
-```text
-/plugin install ~/code/recall
-```
-
-### Option C — `--plugin-dir` for one session *(testing without installing)*
-
-```bash
 claude --plugin-dir ~/code/recall
 ```
 
