@@ -19,12 +19,13 @@
 ▸ **Why** — keep continuity across sessions without paying token cost on every start, without an opaque SQLite memory, without a background worker, and without competing with your existing `task.md`/`output.md` subagent files.
 ▸ **How** — install once, opt in per project with `/recall:init`, work normally, type `/recall:resume` when you want to pick up where you left off.
 
-```text
-# install (once)
-/plugin marketplace add tonimaxx/recall
-/plugin install recall@recall
+```bash
+# install (once, from your shell — fully automated)
+curl -fsSL https://raw.githubusercontent.com/tonimaxx/recall/main/install.sh | bash
+```
 
-# enable in a project (once per project)
+```text
+# enable in a project (once per project, from inside Claude Code)
 cd ~/my-project
 /recall:init
 ```
@@ -120,23 +121,36 @@ recall's pitch in one sentence: *"What if my own deliberately-written `status.md
 
 ## ◆ Install
 
-### Option A — from this repo as a marketplace *(recommended)*
+### Option A — one-line installer *(recommended)*
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/tonimaxx/recall/main/install.sh | bash
+```
+
+Writes the marketplace + enables the plugin in `~/.claude/settings.json` directly. No manual `/plugin marketplace add` or `/plugin install` needed. Restart Claude Code (or run `/reload-plugins` in an active session) and the skills appear.
+
+To remove later:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/tonimaxx/recall/main/uninstall.sh | bash
+```
+
+### Option B — manual via `/plugin`
 
 ```text
 /plugin marketplace add tonimaxx/recall
 /plugin install recall@recall
+/reload-plugins
 ```
 
-The first command registers this repo as a Claude Code plugin marketplace; the second installs the `recall` plugin from it. Updates land via `/plugin marketplace update recall`.
-
-### Option B — `--plugin-dir` for one session *(testing without installing)*
+### Option C — `--plugin-dir` for one session *(testing without installing)*
 
 ```bash
 git clone https://github.com/tonimaxx/recall.git ~/code/recall
 claude --plugin-dir ~/code/recall
 ```
 
-After install, verify with `/help` — you should see `/recall:init`, `/recall:resume`, `/recall:checkpoint`.
+After install, verify with `/help` — you should see `/recall:init`, `/recall:resume`, `/recall:checkpoint`. If skills don't appear, clear the cache: `rm -rf ~/.claude/plugins/cache && /reload-plugins`.
 
 ---
 
